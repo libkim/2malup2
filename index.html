@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>2말없2</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta name="description" content="구슬을 굴려 당첨자를 뽑는 추첨기">
+  <meta property="og:title" content="2말없2">
+  <meta property="og:description" content="구슬을 굴려 당첨자를 뽑는 추첨기">
+  <meta property="og:type" content="website">
+  <script>
+    // 첫 페인트 전에 테마를 적용해 깜빡임을 막는다
+    try {
+      if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

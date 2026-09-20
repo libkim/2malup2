@@ -1,0 +1,28 @@
+# Cloud in a Bottle 앱 매니페스트
+# https://cloudinabottle.org/docs/creating_an_app/manifest_spec.html
+
+[app]
+name = "2malup2"
+version = "1.0.0"
+description = "구슬을 굴려 당첨자를 뽑는 실시간 추첨기"
+
+[runtime.container]
+image = "Dockerfile"
+# Dockerfile의 기본 PORT(8080)와 같아야 한다
+port = 8080
+
+[routing]
+health_check = "/healthz"
+# 인증 없이 전체 공개. WebSocket(/ws)도 같은 경로 규칙을 따른다
+public_paths = ["/"]
+
+[resources]
+# 서버 런타임은 가볍다 (방 상태는 메모리에만 있고 물리는 브라우저가 돌린다)
+memory_mb = 256
+cpu_cores = 0.5
+# yarn install + vite build가 메모리를 더 쓴다
+build_memory_mb = 1536
+
+[data]
+# 저장할 데이터가 없다. 방 정보는 재시작하면 사라지는 것이 정상이다
+app_data = false
